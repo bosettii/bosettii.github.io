@@ -26,12 +26,6 @@ tbody.addEventListener('click', function (e){
     CheckIfWin();
 });
 
-//to remove
-function test(){
-    console.log(currentRow, currentColumn, nbOfPlay, currentPosition);
-    
-}
-
 
 //place a coin on the board accordingly to the rules
     //variable columnFill = nb of cell free of a coin in this column (max = 0(start at 5))
