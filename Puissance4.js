@@ -133,79 +133,80 @@ function PlaceCoin(){
     }
 }
 
+// every time there is a play the function is called and it checks for horizontal, vertical and diagonals wins.
 let moves = 0;
-
 function CheckIfWin() {
     moves++
-    if (moves < 7){
+    if (moves > 6){
 
-    
     // Check if the current player has won
   
     // Check for horizontal win
-    for (let row = 0; row < 6; row++) {
-      for (let col = 0; col < 4; col++) {
-        const cell1 = getComputedStyle(document.getElementById(`td${row}${col}`)).backgroundColor;
-        const cell2 = getComputedStyle(document.getElementById(`td${row}${col + 1}`)).backgroundColor;
-        const cell3 = getComputedStyle(document.getElementById(`td${row}${col + 2}`)).backgroundColor;
-        const cell4 = getComputedStyle(document.getElementById(`td${row}${col + 3}`)).backgroundColor;
-        if (cell1 === cell2 && cell2 === cell3 && cell3 === cell4 && cell1 !== "rgb(255, 255, 255)") {
-          // Display winning message
-          alert(`Player ${cell1} wins!`);
-          return;
+        for (let row = 0; row < 6; row++) {
+            for (let col = 0; col < 4; col++) {
+                const cell1 = getComputedStyle(document.getElementById(`td${row}${col}`)).backgroundColor;
+                const cell2 = getComputedStyle(document.getElementById(`td${row}${col + 1}`)).backgroundColor;
+                const cell3 = getComputedStyle(document.getElementById(`td${row}${col + 2}`)).backgroundColor;
+                const cell4 = getComputedStyle(document.getElementById(`td${row}${col + 3}`)).backgroundColor;
+                if (cell1 === cell2 && cell2 === cell3 && cell3 === cell4 && cell1 !== "rgb(255, 255, 255)") {
+                    DisplayWin();
+                    return;
+                }
+            }
         }
-      }
-    }
-  
-    // Check for vertical win
-    for (let row = 0; row < 3; row++) {
-      for (let col = 0; col < 7; col++) {
-        const cell1 = getComputedStyle(document.getElementById(`td${row}${col}`)).backgroundColor;
-        const cell2 = getComputedStyle(document.getElementById(`td${row + 1}${col}`)).backgroundColor;
-        const cell3 = getComputedStyle(document.getElementById(`td${row + 2}${col}`)).backgroundColor;
-        const cell4 = getComputedStyle(document.getElementById(`td${row + 3}${col}`)).backgroundColor;
-        if (cell1 === cell2 && cell2 === cell3 && cell3 === cell4 && cell1 !== "rgb(255, 255, 255)") {
-          // Display winning message
-          alert(`Player ${cell1} wins!`);
-          return;
+    
+        // Check for vertical win
+        for (let row = 0; row < 3; row++) {
+            for (let col = 0; col < 7; col++) {
+                const cell1 = getComputedStyle(document.getElementById(`td${row}${col}`)).backgroundColor;
+                const cell2 = getComputedStyle(document.getElementById(`td${row + 1}${col}`)).backgroundColor;
+                const cell3 = getComputedStyle(document.getElementById(`td${row + 2}${col}`)).backgroundColor;
+                const cell4 = getComputedStyle(document.getElementById(`td${row + 3}${col}`)).backgroundColor;
+                if (cell1 === cell2 && cell2 === cell3 && cell3 === cell4 && cell1 !== "rgb(255, 255, 255)") {
+                DisplayWin();
+                return;
+                }
+            }
         }
-      }
-    }
-  
-      // Check for diagonal win (top left to bottom right)
-  for (let row = 0; row < 3; row++) {
-    for (let col = 0; col < 4; col++) {
-      const cell1 = getComputedStyle(document.getElementById(`td${row}${col}`)).backgroundColor;
-      const cell2 = getComputedStyle(document.getElementById(`td${row + 1}${col + 1}`)).backgroundColor;
-      const cell3 = getComputedStyle(document.getElementById(`td${row + 2}${col + 2}`)).backgroundColor;
-      const cell4 = getComputedStyle(document.getElementById(`td${row + 3}${col + 3}`)).backgroundColor;
-      if (cell1 === cell2 && cell2 === cell3 && cell3 === cell4 && cell1 !== "rgb(255, 255, 255)") {
-        // Display winning message
-        alert(`Player ${cell1} wins!`);
-        return;
-      }
-    }
-  }
+    
+        // Check for diagonal win (top left to bottom right)
+        for (let row = 0; row < 3; row++) {
+            for (let col = 0; col < 4; col++) {
+                const cell1 = getComputedStyle(document.getElementById(`td${row}${col}`)).backgroundColor;
+                const cell2 = getComputedStyle(document.getElementById(`td${row + 1}${col + 1}`)).backgroundColor;
+                const cell3 = getComputedStyle(document.getElementById(`td${row + 2}${col + 2}`)).backgroundColor;
+                const cell4 = getComputedStyle(document.getElementById(`td${row + 3}${col + 3}`)).backgroundColor;
+                if (cell1 === cell2 && cell2 === cell3 && cell3 === cell4 && cell1 !== "rgb(255, 255, 255)") {
+                    DisplayWin();
+                    return;
+                }
+            }
+        }
 
-  // Check for diagonal win (top right to bottom left)
-  for (let row = 0; row < 3; row++) {
-    for (let col = 3; col < 7; col++) {
-      const cell1 = getComputedStyle(document.getElementById(`td${row}${col}`)).backgroundColor;
-      const cell2 = getComputedStyle(document.getElementById(`td${row + 1}${col - 1}`)).backgroundColor;
-      const cell3 = getComputedStyle(document.getElementById(`td${row + 2}${col - 2}`)).backgroundColor;
-      const cell4 = getComputedStyle(document.getElementById(`td${row + 3}${col - 3}`)).backgroundColor;
-      if (cell1 === cell2 && cell2 === cell3 && cell3 === cell4 && cell1 !== "rgb(255, 255, 255)") {
-        // Display winning message
-        alert(`Player ${cell1} wins!`);
-        return;
-      }
+    // Check for diagonal win (top right to bottom left)
+        for (let row = 0; row < 3; row++) {
+            for (let col = 3; col < 7; col++) {
+                const cell1 = getComputedStyle(document.getElementById(`td${row}${col}`)).backgroundColor;
+                const cell2 = getComputedStyle(document.getElementById(`td${row + 1}${col - 1}`)).backgroundColor;
+                const cell3 = getComputedStyle(document.getElementById(`td${row + 2}${col - 2}`)).backgroundColor;
+                const cell4 = getComputedStyle(document.getElementById(`td${row + 3}${col - 3}`)).backgroundColor;
+                if (cell1 === cell2 && cell2 === cell3 && cell3 === cell4 && cell1 !== "rgb(255, 255, 255)") {
+                    DisplayWin();
+                }
+            }
+        }
     }
-  }
-}
-else if (moves > 42){
-    alert("it's a tie!")
-}
-  return;
+    else if (moves > 42){
+        alert("it's a tie!")
+    }
+    return;
 }
 
-//il faudrait que je mette un autre message d'érreur que leode rgb de la couleur.
+function DisplayWin(){
+    if (nbOfPlay % 2 == 0){
+        alert("red wins")
+    }
+    else{
+        alert("yellow wins!")
+    }
+}

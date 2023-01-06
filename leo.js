@@ -139,7 +139,7 @@ for(let i = 0 ;i< cases.length;i++)
         else
             content ="X";
 
-        AffJoueur.style.backgroundColor="#b16f24";
+        AffJoueur.style.backgroundColor="#d3d3d3";
         aff.sendMessage("C'est au tour du Joueur " + content);
       }
       else if (jeu == 1){
