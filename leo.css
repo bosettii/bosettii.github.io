@@ -2,22 +2,15 @@ header
 {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: white;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    padding-top:0.1em;
-    row-gap: 50px;
-}
-img
-{
-    margin-right: auto;
+    padding: 1em;
+    margin: 0 -5px;
 }
 body
 {
     display: flex;
     flex-direction: column;
-    background-color: #b16f24;
+    background-color: #17a2b8;
     margin: 0%;
     padding: 0%;
     min-height: 100vh;
@@ -27,6 +20,7 @@ a
     text-decoration: none;
     color: grey;
     font-size: 1.2em;
+    margin: 0 5px;
 }
 section
 {
