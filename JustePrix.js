@@ -3,7 +3,7 @@ let max = document.getElementById("BorneSup");
 let btnBs=document.getElementById("Bs");
 let btnver = document.getElementById("btnver");
 let Comptxt = document.getElementById("Comp");
-let Compteur=0; // Comptre le nombre coups du joueur
+let Compteur=0; // Compte le nombre coups du joueur
 
 
 let res=document.getElementById("Resultat"); // Va permettre d'afficher plus,moins,Trouver
@@ -17,29 +17,15 @@ max.addEventListener("keypress", function(e)
     }
 })
 btnBs.addEventListener("click",Generateur_Nb_Ale);
-btnver.addEventListener("click",Verif);
 btnver.addEventListener("click",Trouver);
 NbJoueur.addEventListener("keypress", function(e)
 {
     if(e.key == "Enter")
     {
-    Verif(NbJoueur.value);
     Trouver();
     }
 })
 let NbJoueur2;
-function Verif(Nb)
-{
-    //Verifie qu'il s'agit dun nombre
-    
-    if(parseFloat(Nb))
-    {
-    }
-    else
-    {
-        alert("La valeur rentre n'est pas un nombre entier");
-    }
-}
 
 function Generateur_Nb_Ale()
 {
@@ -55,7 +41,7 @@ function Trouver()
 {
     NbJoueur2=parseFloat(NbJoueur.value);
     
-    //Va Verifier si nous somme = a notre valeur rechercher
+    //Va Verifier si nous somme égale à notre valeur rechercher
     if(NbJoueur2 >Nb_a_Trouver)
     {
         res.innerText ="Moins";
