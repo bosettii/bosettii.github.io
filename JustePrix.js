@@ -27,7 +27,6 @@ NbJoueur.addEventListener("keypress", function(e)
     Trouver();
     }
 })
-console.log(Nb_a_Trouver);
 let NbJoueur2;
 function Verif(Nb)
 {
@@ -45,17 +44,17 @@ function Verif(Nb)
 function Generateur_Nb_Ale()
 {
     let maxval=parseFloat(max.value);
-    console.log("Maxval " + maxval)
+    
     Nb_a_Trouver= Math.floor( Math.random() * (maxval))+1;
     Compteur = 0;
     Comptxt.innerText="Compteur:"+ Compteur
-    console.log(Nb_a_Trouver)
+    
 }
 
 function Trouver()
 {
     NbJoueur2=parseFloat(NbJoueur.value);
-    console.log(NbJoueur2);
+    
     //Va Verifier si nous somme = a notre valeur rechercher
     if(NbJoueur2 >Nb_a_Trouver)
     {
@@ -73,7 +72,7 @@ function Trouver()
     {
         Compteur++;
         Comptxt.innerText="Compteur:"+ Compteur
-        res.innerText="GG ta trouver la solution, tu l'as trouve en "+ Compteur +" coups";
+        res.innerText="GG ta trouver la solution, tu l'as trouve en "+ Compteur +" coups pour recommencer appuie sur acceptation";
     }
     else if(isNaN(NbJoueur2))
     {
@@ -84,6 +83,3 @@ function Trouver()
 
 }
 
-
-/* Valider avec touche entree
-*/
