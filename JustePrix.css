@@ -1,0 +1,83 @@
+header
+{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 1em;
+    margin: 0 -5px;
+}
+.Lagaf
+{
+    display: flex;
+    margin: auto;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #17a2b8;
+    margin: 0%;
+    padding: 0%;
+    min-height: 100vh;
+}
+a
+{
+    text-decoration: none;
+    color: grey;
+    font-size: 1.2em;
+    margin: 0 5px;
+}
+section
+{
+    padding-top: 3em;
+    padding-bottom: 3em;
+    background-color: lightgrey;
+    margin: 20em;
+    margin-top : 5em;
+    margin-bottom: 5em;
+    border-radius: 0.5em;
+}
+article
+{
+    text-align: center;
+}
+.list a
+{
+    background-color: white;
+    padding-top:1em;
+    padding-bottom: 1em;
+    border-radius: 0.5em;
+}
+.list
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1em;
+    padding: 1em;
+}
+.Titre
+{
+    margin: auto;
+    text-align: center;
+
+}
+.BoiteNb
+{
+    margin: auto;
+    text-align: left;
+}
+.intro
+{
+    margin: auto;
+    text-align: center;
+}
+.PoM
+{
+    margin: auto;
+    text-align: center;
+}
+footer
+{
+    margin-top: auto;
+}
